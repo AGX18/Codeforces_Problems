@@ -2,23 +2,6 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Main {
-    public static int findK(int n, int x) { // n - x = m * (2 * k - 2) -> (k - 1) * 2 * m = n - x
-        HashSet<Integer> possibleKs = new HashSet<>();
-        for (int i = 1; i * i <= n - x; i++) {
-            if ((n - x) % i == 0) {
-                if(i % 2 == 0 && (i/2 + 1) >= x) {
-                    possibleKs.add(i/2 + 1);
-                }
-                if(((n - x) / i) % 2 == 0 && (((n - x) / i) / 2 + 1) >= x){
-                    possibleKs.add(((n - x) / i) / 2 + 1);
-                }
-            }
-        }
-
-
-        return possibleKs.size();
-    }
-
     public static HashSet<Integer> findPossiblities(int a) { // n - x = m * (2 * k - 2) -> (k - 1) * 2 * m = n - x
         HashSet<Integer> possibleKs = new HashSet<>();
         for (int i = 1; i * i <= a; i++) {
